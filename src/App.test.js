@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App from 'mesto-react/src/components/App.js';
+import App from '../src/components/App.js';
 
 test('renders learn react link', () => {
   render(<App />);
