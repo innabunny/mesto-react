@@ -10,7 +10,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUserInfo, isLoading}) {
   useEffect(() => {
     setName(currentUser.name);
     setAbout(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, isOpen]);
 
   function handleChangeName(evt) {
     setName(evt.target.value);
@@ -36,7 +36,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUserInfo, isLoading}) {
         type="text" name="name" minLength="2" maxLength="40" required id="name-input"
         className="popup__input popup__input_type_name" placeholder="Имя"
         autoComplete="off"
-        value={name}
+        value={name || ''}
         onChange={handleChangeName}
       />
       <span className="popup__input-error" id="name-input-error"></span>
@@ -44,7 +44,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUserInfo, isLoading}) {
         type="text" name="about" minLength="2" maxLength="200" required id="about-input"
         className="popup__input popup__input_type_about" placeholder="О себе"
         autoComplete="off"
-        value={about}
+        value={about || ''}
         onChange={handleChangeAbout}
       />
       <span className="popup__input-error" id="about-input-error"></span>
